@@ -1,8 +1,12 @@
 using UnityEngine;
 using System.IO;
+using Unity.VisualScripting;
+
+
+
 public class MainManager : MonoBehaviour
 {
-    public static MainManager Instance;
+    public static MainManager Instance{get; private set;}
 
     public Color TeamColor;
     private void Awake()
@@ -16,6 +20,7 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         LoadColor();
     }
+
     [System.Serializable]
     class SaveData
     {
